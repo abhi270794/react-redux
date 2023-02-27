@@ -1,11 +1,19 @@
 import React from 'react';
 
-const Reducer = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+const initialState={
+    cardData:[]
+}
+const cardItem = (state=initialState,action) => {
+    switch(action.type){
+        case "ADD_TO_CARD": 
+        return{
+            ...state,
+            cardData:action.data
+        }
+        break;
+        default:
+            return state
+    }
 };
 
-export default Reducer;
+export default cardItem;
